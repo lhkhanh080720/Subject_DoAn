@@ -1,0 +1,24 @@
+12:33:27 **** Incremental Build of configuration Debug for project UART ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:90:8: warning: unused variable 'c' [-Wunused-variable]
+   90 |   char c[] = "h\n";
+      |        ^
+arm-none-eabi-gcc -o "UART.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\HCMUT\Do an 212\Project\UART\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART.elf
+ 
+arm-none-eabi-size   UART.elf 
+arm-none-eabi-objdump -h -S  UART.elf  > "UART.list"
+arm-none-eabi-objcopy  -O binary  UART.elf  "UART.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7700	     20	   1636	   9356	   248c	UART.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART.bin
+ 
+Finished building: UART.list
+ 
+
+12:33:28 Build Finished. 0 errors, 1 warnings. (took 1s.27ms)
+
