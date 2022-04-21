@@ -1,0 +1,7 @@
+22:07:32 **** Build of configuration Debug for project Main ****
+make -j8 all 
+arm-none-eabi-size   Main.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24484	     36	   2028	  26548	   67b4	Main.elf
+Finished building: default.size.stdout
+ 
